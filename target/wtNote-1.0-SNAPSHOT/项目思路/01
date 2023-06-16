@@ -1,0 +1,21 @@
+用户模块:
+    用户行为:               actionName
+        用户登录            actionName="login"
+        进入个人中心         actionName="userCenter"
+        加载头像            actionName="userHead"
+        验证昵称的唯一性      actionName="checkNock"
+        修改用户信息         actionName="updateUser"
+        用户退出            actionName="logout"
+
+    在UserServlet的service方法中：
+        1. 获取用户行为
+            String actionName = request.getParameter("actionName");
+        2. 判断用户行为，调用对应的方法
+
+一用户登录
+    ===========前端实现==========
+        1. 添加表单，设置表单属性
+            action="user" method="post" id="loginForm"
+        2. 设置表单的name属性值，修改id属性值
+            设置文本框和密码框的name属性值
+            设置复选框的name属性值和value属性值（如果复选框未被选中，则获取不到value属性值）
